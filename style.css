@@ -1,23 +1,101 @@
+/* RESET */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ffb347);
+  color: white;
+  scroll-behavior: smooth;
 }
 
-header {
-  background: #111;
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
   color: white;
-  padding: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* LANDING */
+.landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#title {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+/* FLOATING SHAPES */
+.floating-shape, .floating-shape2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.floating-shape {
+  background: #ff00cc;
+  top: 20%;
+  left: 20%;
+}
+
+.floating-shape2 {
+  background: #ff9900;
+  bottom: 20%;
+  right: 20%;
+}
+
+/* SECTIONS */
+section {
+  padding: 100px 20px;
   text-align: center;
 }
 
-section {
-  padding: 2rem;
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: 300px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
 }
 
-.project {
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+.button {
   background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }

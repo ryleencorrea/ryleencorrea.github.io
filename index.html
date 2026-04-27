@@ -2,25 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rylee Correa Portfolio</title>
+  <title>Rylee Correa</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Rylee Correa</h1>
-    <p>ICAM Student | Designer | Developer</p>
-  </header>
 
-  <section>
+  <!-- NAVBAR -->
+  <nav>
+    <h1 class="logo">RC</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- LANDING -->
+  <section id="home" class="landing">
+    <div class="floating-shape"></div>
+    <div class="floating-shape2"></div>
+
+    <h1 id="title">Rylee Correa</h1>
+    <p>ICAM Student • Designer • Creative Technologist</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
+    <div class="card">
       <h3>Custom Theremin</h3>
-      <p>Raspberry Pi instrument with custom PCB.</p>
+      <p>Raspberry Pi instrument with custom PCB + sound synthesis.</p>
     </div>
   </section>
 
-  <footer>
-    <p>© 2026</p>
-  </footer>
+  <!-- RESUME -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="resume.pdf" target="_blank" class="button">Download Resume</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
