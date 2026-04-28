@@ -50,21 +50,21 @@ nav a {
 /* FLOATING SHAPES */
 .floating-shape, .floating-shape2 {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
+  opacity: 0.8;
+  z-index: 0;
 }
 
 .floating-shape {
-  background: #ff00cc;
+  background: radial-gradient(circle, #ff00cc, transparent 70%);
   top: 20%;
   left: 20%;
 }
 
 .floating-shape2 {
-  background: #ff9900;
+  background: radial-gradient(circle, #ff9900, transparent 70%);
   bottom: 20%;
   right: 20%;
 }
