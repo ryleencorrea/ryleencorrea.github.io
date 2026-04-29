@@ -1,3 +1,15 @@
+/* NAV SCROLL EFFECT */
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight * 0.6) {
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+/* FLOATING BLOBS FOLLOW MOUSE */
 const shape1 = document.querySelector(".floating-shape");
 const shape2 = document.querySelector(".floating-shape2");
 
@@ -8,6 +20,8 @@ document.addEventListener("mousemove", (e) => {
   shape1.style.transform = `translate(${x * 50}px, ${y * 50}px)`;
   shape2.style.transform = `translate(${x * -50}px, ${y * -50}px)`;
 });
+
+/* DOTS BACKGROUND */
 const canvas = document.getElementById("dots");
 const ctx = canvas.getContext("2d");
 
@@ -42,6 +56,8 @@ function animate() {
 }
 
 animate();
+
+/* MODAL IMAGE */
 const cards = document.querySelectorAll(".project-card");
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");

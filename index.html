@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Rylee Correa</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav>
-    <h1 class="logo">RC</h1>
+    <div class="logo">RC</div>
     <ul>
       <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -21,25 +27,37 @@
   <!-- LANDING -->
   <section id="home" class="landing">
     <canvas id="dots"></canvas>
+
     <div class="floating-shape"></div>
     <div class="floating-shape2"></div>
 
-    <h1 id="title">Rylee Correa</h1>
+    <h1>Rylee Correa</h1>
     <p>ICAM Student • Designer • Creative Technologist</p>
   </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an ICAM student focused on interactive design, hardware-based
+      creative technology, and experimental media. My work blends physical
+      computing with digital interfaces, often exploring sound and interaction.
+    </p>
+  </section>
 
-  <div class="grid">
-    <div class="project-card">
-      <img src="images/theremin.jpg">
-      <div class="overlay">
-        <h3>Custom Theremin</h3>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="grid">
+      <div class="project-card">
+        <img src="images/theremin.jpg" alt="Theremin">
+        <div class="overlay">
+          <h3>Custom Theremin</h3>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- RESUME -->
   <section id="resume">
@@ -53,19 +71,12 @@
     <p>Email: your@email.com</p>
   </section>
 
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <span id="close">&times;</span>
+    <img id="modal-img">
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-<div id="modal" class="modal">
-  <span id="close">&times;</span>
-  <img id="modal-img">
-</div>
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m an ICAM student focused on interactive design, hardware-based
-    creative technology, and experimental media. My work blends physical
-    computing with digital interfaces, often exploring sound, perception,
-    and playful interaction.
-  </p>
-</section>
