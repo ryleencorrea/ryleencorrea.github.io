@@ -4,11 +4,11 @@
 }
 
 :root {
-  --pink: #f48fb1;
-  --orange: #ffb074;
-  --accent: #ff7a9c;
-
-  --bg-main: #f7f4ef;   /* off-white */
+  --pink: #F9ADAD;
+  --orange: #FD9758;
+  --accent: #D86534;
+  --accent2: #FFD8B4;
+  --bg-main: #F7E6D2;   /* off-white */
   --text-dark: #1a1a1a;
 }
 
@@ -28,7 +28,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background: rgba(0,0,0,0.2);
+  background: var(--accent);
   backdrop-filter: blur(10px);
 }
 
@@ -39,7 +39,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }
@@ -48,7 +48,7 @@ nav a {
 .landing {
   height: 100vh;
   background: linear-gradient(135deg, var(--pink), var(--orange));
-  color: white;
+  color: rgb(249, 216, 208);
   position: relative;
   overflow: hidden;
 }
