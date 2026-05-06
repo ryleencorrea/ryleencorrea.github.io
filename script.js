@@ -93,7 +93,7 @@ let index = 0;
 
 cards.forEach(card => {
   card.addEventListener("click", () => {
-    images = card.dataset.images.split(",");
+images = card.dataset.images.split(",").map(img => img.trim());
     index = 0;
     modal.style.display = "flex";
     modalImg.src = images[index];
