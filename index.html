@@ -2,81 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rylee Correa</title>
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">RC</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav>
+  <div class="logo">RC</div>
 
-  <!-- LANDING -->
-  <section id="home" class="landing">
-    <canvas id="dots"></canvas>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="floating-shape"></div>
-    <div class="floating-shape2"></div>
+<!-- LANDING -->
+<section id="home" class="landing">
+  <canvas id="dots"></canvas>
 
-    <h1>Rylee Correa</h1>
-    <p>ICAM Student • Designer • Creative Technologist</p>
-  </section>
+  <div class="floating-shape"></div>
+  <div class="floating-shape2"></div>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m an ICAM student focused on interactive design, hardware-based
-      creative technology, and experimental media. My work blends physical
-      computing with digital interfaces, often exploring sound and interaction.
-    </p>
-  </section>
+  <h1 class="reveal">Rylee Correa</h1>
+  <p class="reveal">ICAM Student • Designer • Creative Technologist</p>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <p>
+    I’m an ICAM student focused on interactive design, hardware-based
+    creative technology, and experimental media. My work blends physical
+    computing with digital interfaces, exploring sound and interaction.
+  </p>
+</section>
 
-    <div class="grid">
-      <div class="project-card">
-        <img src="images/theremin.jpg" alt="Theremin">
-        <div class="overlay">
-          <h3>Custom Theremin</h3>
-        </div>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="reveal">Projects</h2>
+
+  <div class="grid">
+    <div class="project-card reveal"
+      data-images="images/theremin1.jpg,images/theremin2.jpg,images/theremin3.jpg">
+      <img src="images/theremin1.jpg">
+      <div class="overlay">
+        <h3>Custom Theremin</h3>
       </div>
     </div>
-  </section>
-
-  <!-- RESUME -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <a href="resume.pdf" target="_blank" class="button">Download Resume</a>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-  </section>
-
-  <!-- MODAL -->
-  <div id="modal" class="modal">
-    <span id="close">&times;</span>
-    <img id="modal-img">
   </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- RESUME -->
+<section id="resume" class="reveal">
+  <h2>Resume</h2>
+  <a href="resume.pdf" target="_blank" class="button">Download Resume</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<!-- MODAL CAROUSEL -->
+<div id="modal" class="modal">
+  <span id="close">&times;</span>
+
+  <button class="nav-btn prev">&#10094;</button>
+  <img id="modal-img">
+  <button class="nav-btn next">&#10095;</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
