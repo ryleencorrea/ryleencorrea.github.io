@@ -1,4 +1,4 @@
-/* NAV SCROLL STYLE */
+/* NAV SCROLL */
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", () => {
@@ -9,6 +9,14 @@ window.addEventListener("scroll", () => {
   }
 });
 
+/* MOBILE MENU */
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".nav-links");
+
+toggle.onclick = () => {
+  links.classList.toggle("active");
+};
+
 /* SCROLL REVEAL */
 const reveals = document.querySelectorAll(".reveal");
 
@@ -16,8 +24,7 @@ function revealOnScroll() {
   const trigger = window.innerHeight * 0.85;
 
   reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < trigger) {
+    if (el.getBoundingClientRect().top < trigger) {
       el.classList.add("active");
     }
   });
@@ -25,7 +32,7 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-/* BLOBS FOLLOW MOUSE */
+/* BLOBS */
 const shape1 = document.querySelector(".floating-shape");
 const shape2 = document.querySelector(".floating-shape2");
 
@@ -108,12 +115,3 @@ closeBtn.onclick = () => modal.style.display = "none";
 modal.onclick = (e) => {
   if (e.target === modal) modal.style.display = "none";
 };
-
-/* KEYBOARD NAV */
-document.addEventListener("keydown", (e) => {
-  if (modal.style.display === "flex") {
-    if (e.key === "ArrowRight") nextBtn.onclick();
-    if (e.key === "ArrowLeft") prevBtn.onclick();
-    if (e.key === "Escape") modal.style.display = "none";
-  }
-});
