@@ -53,107 +53,96 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* DOTS */
-  const canvas = document.getElementById("dots");
+/* DOTS */
+const canvas = document.getElementById("dots");
 
-  if (canvas) {
-    const ctx = canvas.getContext("2d");
+if (canvas) {
+  const ctx = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-    let dots = [];
+  let dots = [];
 
-    for (let i = 0; i < 60; i++) {
-      dots.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: Math.random() - 0.5,
-        vy: Math.random() - 0.5
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      dots.forEach(dot => {
-        dot.x += dot.vx;
-        dot.y += dot.vy;
-
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255,255,255,0.7)";
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  }
-
-  /* CAROUSEL */
-  const cards = document.querySelectorAll(".project-card");
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  const closeBtn = document.getElementById("close");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-
-  let images = [];
-  let index = 0;
-
-  if (cards.length && modal && modalImg) {
-    cards.forEach(card => {
-      card.addEventListener("click", () => {
-        console.log("clicked");
-
-        const data = card.dataset.images;
-
-        if (!data) {
-          console.error("No data-images attribute found");
-          return;
-        }
-
-        images = data.split(",").map(img => img.trim());
-
-        if (images.length === 0) {
-          console.error("No images parsed");
-          return;
-        }
-
-        index = 0;
-
-        console.log("Images:", images);
-
-        modal.style.display = "flex";
-        modalImg.src = images[index];
-      });
+  for (let i = 0; i < 180; i++) {
+    dots.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.7,
+      vy: (Math.random() - 0.5) * 0.7,
+      size: Math.random() * 4 + 2
     });
   }
 
-  if (nextBtn && prevBtn && modalImg) {
-    nextBtn.onclick = () => {
-      if (images.length === 0) return;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      index = (index + 1) % images.length;
-      modalImg.src = images[index];
-    };
+    dots.forEach(dot => {
+      dot.x += dot.vx;
+      dot.y += dot.vy;
 
-    prevBtn.onclick = () => {
-      if (images.length === 0) return;
+      if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+      if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
 
-      index = (index - 1 + images.length) % images.length;
-      modalImg.src = images[index];
-    };
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255,255,255,0.7)";
+      ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
   }
 
-  if (closeBtn && modal) {
-    closeBtn.onclick = () => modal.style.display = "none";
+  animate();
+}
 
-    modal.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
-  }
+/* CAROUSEL */
+const cards = document.querySelectorAll(".project-card");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const modalCaption = document.getElementById("modal-caption");
 
+const closeBtn = document.getElementById("close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let images = [];
+let index = 0;
+let currentCaption = "";
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    images = card.dataset.images.split(",").map(img => img.trim());
+
+    currentCaption = card.dataset.caption || "";
+
+    index = 0;
+
+    modal.style.display = "flex";
+
+    modalImg.src = images[index];
+    modalCaption.textContent = currentCaption;
+  });
 });
+
+nextBtn.onclick = () => {
+  index = (index + 1) % images.length;
+  modalImg.src = images[index];
+};
+
+prevBtn.onclick = () => {
+  index = (index - 1 + images.length) % images.length;
+  modalImg.src = images[index];
+};
+
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+modal.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+})
