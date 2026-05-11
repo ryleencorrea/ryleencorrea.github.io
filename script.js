@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   /* NAV SCROLL */
   const nav = document.querySelector("nav");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight * 0.6) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
+  if (nav) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    });
+  }
 
   /* MOBILE MENU */
   const toggle = document.querySelector(".menu-toggle");
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll(); // run once on load
+  revealOnScroll();
 
   /* BLOBS */
   const shape1 = document.querySelector(".floating-shape");
@@ -104,10 +106,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cards.length && modal && modalImg) {
     cards.forEach(card => {
       card.addEventListener("click", () => {
-        console.log("clicked"); // debug
+        console.log("clicked");
 
-        images = card.dataset.images.split(",").map(img => img.trim());
+        const data = card.dataset.images;
+
+        if (!data) {
+          console.error("No data-images attribute found");
+          return;
+        }
+
+        images = data.split(",").map(img => img.trim());
+
+        if (images.length === 0) {
+          console.error("No images parsed");
+          return;
+        }
+
         index = 0;
+
+        console.log("Images:", images);
 
         modal.style.display = "flex";
         modalImg.src = images[index];
@@ -115,13 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (nextBtn && prevBtn) {
+  if (nextBtn && prevBtn && modalImg) {
     nextBtn.onclick = () => {
+      if (images.length === 0) return;
+
       index = (index + 1) % images.length;
       modalImg.src = images[index];
     };
 
     prevBtn.onclick = () => {
+      if (images.length === 0) return;
+
       index = (index - 1 + images.length) % images.length;
       modalImg.src = images[index];
     };
