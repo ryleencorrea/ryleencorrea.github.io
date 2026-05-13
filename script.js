@@ -145,4 +145,26 @@ modal.onclick = (e) => {
     modal.style.display = "none";
   }
 };
+/* FLOATING BLOCK PARALLAX */
+
+const blocks = document.querySelectorAll(".bg-block");
+
+document.addEventListener("mousemove", (e) => {
+
+  const x = e.clientX / window.innerWidth - 0.5;
+  const y = e.clientY / window.innerHeight - 0.5;
+
+  blocks.forEach((block, index) => {
+
+    const speed = (index % 5 + 1) * 8;
+
+    block.style.transform = `
+      translate(
+        ${x * speed}px,
+        ${y * speed}px
+      )
+    `;
+  });
+
+});
 })
