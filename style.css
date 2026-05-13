@@ -240,7 +240,7 @@ section {
 #projects,
 #resume,
 #contact {
-  background: var(--cream);
+  background: #fffaf5;
 }
 
 h2 {

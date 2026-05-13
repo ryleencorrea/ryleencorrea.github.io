@@ -159,7 +159,7 @@ document.addEventListener("mousemove", (e) => {
 
 blocks.forEach((block, index) => {
 
-  const speed = (index % 5 + 1) * 0.3;
+  const speed = (index % 5 + 1) * 0.18;
 
   const randomOffset = Math.random() * 1000;
 
