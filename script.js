@@ -153,30 +153,42 @@ let mouseX = 0;
 let mouseY = 0;
 
 document.addEventListener("mousemove", (e) => {
-  mouseX = (e.clientX / window.innerWidth - 0.5);
-  mouseY = (e.clientY / window.innerHeight - 0.5);
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 30;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 30;
 });
 
 blocks.forEach((block, index) => {
 
-  const speed = (index % 6 + 1) * 6;
+  const speed = (index % 5 + 1) * 0.3;
 
-  let offsetX = 0;
-  let offsetY = 0;
+  const randomOffset = Math.random() * 1000;
 
-  function animateBlock() {
+  function animate() {
 
-    offsetX += (mouseX * speed - offsetX) * 0.05;
-    offsetY += (mouseY * speed - offsetY) * 0.05;
+    const time = Date.now() * 0.001;
+
+    /* ORGANIC FLOATING */
+    const floatX =
+      Math.sin(time * speed + randomOffset) * 20;
+
+    const floatY =
+      Math.cos(time * speed + randomOffset) * 20;
+
+    /* MOUSE PARALLAX */
+    const moveX = mouseX * (speed * 0.15);
+    const moveY = mouseY * (speed * 0.15);
 
     block.style.transform = `
-      translate(${offsetX}px, ${offsetY}px)
+      translate(
+        ${floatX + moveX}px,
+        ${floatY + moveY}px
+      )
     `;
 
-    requestAnimationFrame(animateBlock);
+    requestAnimationFrame(animate);
   }
 
-  animateBlock();
+  animate();
 
 });
 })
