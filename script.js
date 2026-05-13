@@ -145,26 +145,38 @@ modal.onclick = (e) => {
     modal.style.display = "none";
   }
 };
-/* FLOATING BLOCK PARALLAX */
+/* FLOATING BLOCKS */
 
 const blocks = document.querySelectorAll(".bg-block");
 
+let mouseX = 0;
+let mouseY = 0;
+
 document.addEventListener("mousemove", (e) => {
+  mouseX = (e.clientX / window.innerWidth - 0.5);
+  mouseY = (e.clientY / window.innerHeight - 0.5);
+});
 
-  const x = e.clientX / window.innerWidth - 0.5;
-  const y = e.clientY / window.innerHeight - 0.5;
+blocks.forEach((block, index) => {
 
-  blocks.forEach((block, index) => {
+  const speed = (index % 6 + 1) * 6;
 
-    const speed = (index % 5 + 1) * 8;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  function animateBlock() {
+
+    offsetX += (mouseX * speed - offsetX) * 0.05;
+    offsetY += (mouseY * speed - offsetY) * 0.05;
 
     block.style.transform = `
-      translate(
-        ${x * speed}px,
-        ${y * speed}px
-      )
+      translate(${offsetX}px, ${offsetY}px)
     `;
-  });
+
+    requestAnimationFrame(animateBlock);
+  }
+
+  animateBlock();
 
 });
 })
