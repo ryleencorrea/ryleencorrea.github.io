@@ -21,6 +21,7 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -77,18 +78,43 @@
   <!-- HERO -->
   <div class="hero-content">
     <h1>Rylee Correa</h1>
-    <p>ICAM Student • Designer • Creative Technologist</p>
+    <p>ICAM Student &bull; Designer &bull; Creative Technologist</p>
   </div>
 
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="reveal">
-  <h2>About Me</h2>
-  <p>
-    I’m an ICAM student focused on interactive design, hardware-based
-    creative technology, and experimental media.
-  </p>
+  <div class="about-grid">
+
+    <div class="about-left">
+      <div class="about-photo"></div>
+      <div class="about-links">
+        <a href="mailto:ryleencorrea@gmail.com" class="about-link">Email</a>
+        <a href="#" class="about-link">LinkedIn</a>
+        <a href="#" class="about-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <h2>About Me</h2>
+      <p class="about-bio">
+        I'm a new designer focused on interactive design, hardware-based
+        creative technology, and experimental media.
+      </p>
+      <div class="about-details">
+        <div class="about-detail">
+          <span class="detail-label">Education</span>
+          <span>ICAM &middot; UC San Diego</span>
+        </div>
+        <div class="about-detail">
+          <span class="detail-label">Focus</span>
+          <span>Interactive Design &middot; Hardware &middot; Experimental Media</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -102,10 +128,20 @@
       data-images="images/thereminPCB1.png,images/thereminPCB2.png,images/thereminPCB3.png,images/thereminPCB4.png"
       data-caption="Custom Raspberry Pi theremin with PCB design and audio synthesis.">
 
-      <img src="images/thereminPCB1.png">
-
-      <div class="overlay">
-        <h3>Custom Theremin</h3>
+      <div class="card-image">
+        <img src="images/thereminPCB1.png">
+        <div class="overlay">
+          <h3>Custom Theremin</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Custom Raspberry Pi theremin with PCB design and audio synthesis.</p>
+        <div class="card-tags">
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">PCB Design</span>
+          <span class="tag">KiCad</span>
+          <span class="tag">Hardware</span>
+        </div>
       </div>
     </div>
 
@@ -114,10 +150,17 @@
       data-images="images/placeholder1.jpg"
       data-caption="Placeholder project description.">
 
-      <img src="images/placeholder1.jpg">
-
-      <div class="overlay">
-        <h3>Project Placeholder</h3>
+      <div class="card-image">
+        <img src="images/placeholder1.jpg">
+        <div class="overlay">
+          <h3>Project Placeholder</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Placeholder project description.</p>
+        <div class="card-tags">
+          <span class="tag">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -126,10 +169,17 @@
       data-images="images/placeholder2.jpg"
       data-caption="Another placeholder project description.">
 
-      <img src="images/placeholder2.jpg">
-
-      <div class="overlay">
-        <h3>Project Placeholder</h3>
+      <div class="card-image">
+        <img src="images/placeholder2.jpg">
+        <div class="overlay">
+          <h3>Project Placeholder</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Another placeholder project description.</p>
+        <div class="card-tags">
+          <span class="tag">Coming Soon</span>
+        </div>
       </div>
     </div>
 
@@ -151,10 +201,29 @@
   </div>
 </div>
 
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3 class="skill-category">Design</h3>
+      <p>Figma, Adobe Creative Suite, Touch Designer, Blender, ZBrush</p>
+    </div>
+    <div class="skill-group">
+      <h3 class="skill-category">Creative Tech</h3>
+      <p>Altium Designer, PCB Design, Sensor Systems, Solidworks, OnShape, Microcontroller Integrations</p>
+    </div>
+    <div class="skill-group">
+      <h3 class="skill-category">Languages</h3>
+      <p>HTML, CSS, JavaScript, Python, Java, C++</p>
+    </div>
+  </div>
+</section>
+
 <!-- RESUME -->
 <section id="resume" class="reveal">
   <h2>Resume</h2>
-  <a href="files\Rylee Correa Resume Design.pdf" class="button" target="_blank">Download Resume</a>
+  <a href="files/Rylee Correa Resume Design.pdf" class="button" target="_blank">Download Resume</a>
 </section>
 
 <!-- CONTACT -->
@@ -162,15 +231,6 @@
   <h2>Contact</h2>
   <p>Email: ryleencorrea@gmail.com</p>
 </section>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <span id="close">&times;</span>
-
-  <button class="nav-btn prev">&#10094;</button>
-  <img id="modal-img">
-  <button class="nav-btn next">&#10095;</button>
-</div>
 
 <script src="script.js"></script>
 </body>

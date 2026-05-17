@@ -100,8 +100,8 @@ nav.scrolled .nav-links a {
   background:
     linear-gradient(
       to bottom,
-      #fbc8c8 0%,
-      #fcd3d3 55%,
+      #fcd3d3 0%,
+      #fffaf5 55%,
       #fffaf5 100%
     );
 }
@@ -238,6 +238,7 @@ section {
 
 #about,
 #projects,
+#skills,
 #resume,
 #contact {
   background: #fffaf5;
@@ -280,6 +281,9 @@ h2 {
 
   cursor: pointer;
 
+  display: flex;
+  flex-direction: column;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -295,11 +299,19 @@ h2 {
     0 20px 40px rgba(0,0,0,0.15);
 }
 
+.card-image {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
 .project-card img {
   width: 100%;
-  height: 320px;
+  height: 260px;
 
   object-fit: cover;
+
+  display: block;
 
   transition: transform 0.4s ease;
 }
@@ -439,4 +451,179 @@ h2 {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* CARD BODY */
+
+.card-body {
+  padding: 20px 24px 24px;
+  text-align: left;
+}
+
+.card-desc {
+  margin: 0 0 14px;
+
+  font-size: 0.88rem;
+  line-height: 1.6;
+
+  color: rgba(27,27,27,0.6);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 12px;
+
+  border-radius: 999px;
+
+  background: var(--cream);
+  color: var(--burnt);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* ABOUT */
+
+#about {
+  text-align: left;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 60px;
+
+  max-width: 960px;
+  margin: 0 auto;
+
+  align-items: start;
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1;
+
+  background: var(--light);
+  border-radius: 24px;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 16px;
+}
+
+.about-link {
+  display: inline-block;
+
+  padding: 6px 16px;
+
+  border-radius: 999px;
+
+  background: var(--cream);
+  color: var(--burnt);
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.about-link:hover {
+  background: var(--burnt);
+  color: white;
+}
+
+.about-right h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.about-bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: rgba(27,27,27,0.75);
+
+  margin-bottom: 32px;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: var(--burnt);
+}
+
+/* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: left;
+}
+
+.skill-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: var(--burnt);
+
+  margin: 0 0 12px;
+}
+
+.skill-group p {
+  margin: 0;
+
+  line-height: 1.85;
+
+  color: rgba(27,27,27,0.7);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-photo {
+    max-width: 220px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
