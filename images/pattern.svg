@@ -1,0 +1,31 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- CELL A: top-left — Tangerine base -->
+  <rect x="0" y="0" width="100" height="100" fill="#F15A29"/>
+  <rect x="7" y="7" width="86" height="86" rx="22" fill="#F9C12F"/>
+  <rect x="18" y="18" width="64" height="64" rx="15" fill="#FF9846"/>
+  <rect x="31" y="31" width="38" height="38" rx="9" fill="#F9C12F"/>
+  <ellipse cx="50" cy="50" rx="13" ry="13" fill="#FFF5EE"/>
+
+  <!-- CELL B: top-right — Sour Raspberry base -->
+  <rect x="100" y="0" width="100" height="100" fill="#FF5DD4"/>
+  <rect x="107" y="7" width="86" height="86" rx="22" fill="#F15A29"/>
+  <rect x="118" y="18" width="64" height="64" rx="15" fill="#F9C12F"/>
+  <rect x="131" y="31" width="38" height="38" rx="9" fill="#F15A29"/>
+  <ellipse cx="150" cy="50" rx="13" ry="13" fill="#FFF5EE"/>
+
+  <!-- CELL C: bottom-left — Sun base -->
+  <rect x="0" y="100" width="100" height="100" fill="#F9C12F"/>
+  <rect x="7" y="107" width="86" height="86" rx="22" fill="#FF5DD4"/>
+  <rect x="18" y="118" width="64" height="64" rx="15" fill="#F15A29"/>
+  <rect x="31" y="131" width="38" height="38" rx="9" fill="#FF9846"/>
+  <ellipse cx="50" cy="150" rx="13" ry="13" fill="#FFF5EE"/>
+
+  <!-- CELL D: bottom-right — Sunset base -->
+  <rect x="100" y="100" width="100" height="100" fill="#FF9846"/>
+  <rect x="107" y="107" width="86" height="86" rx="22" fill="#F9C12F"/>
+  <rect x="118" y="118" width="64" height="64" rx="15" fill="#FF5DD4"/>
+  <rect x="131" y="131" width="38" height="38" rx="9" fill="#F9C12F"/>
+  <ellipse cx="150" cy="150" rx="13" ry="13" fill="#FFF5EE"/>
+
+</svg>
