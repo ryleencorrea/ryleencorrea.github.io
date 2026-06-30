@@ -99,6 +99,7 @@ nav.scrolled .nav-links a {
   overflow: hidden;
 
   border-radius: 20px;
+  filter: drop-shadow(0 8px 40px rgba(0,0,0,0.18));
 
   background-image: url('images/pattern.svg');
   background-size: 300px 300px;
